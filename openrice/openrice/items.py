@@ -6,8 +6,8 @@
 from scrapy.item import Item, Field
 
 class OpenriceItem(Item):
-    # define the fields for your item here like:
-    # name = Field()
-    title = Field();
-	link = Field();
-	desc = Field();
+	comment_id = Field();
+	num_of_recom = Field();
+	num_of_view = Field();
+	ratio = Field();
+	pass
