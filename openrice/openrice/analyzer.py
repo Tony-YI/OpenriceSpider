@@ -44,7 +44,8 @@ count_row = 1;
 worksheet.write_string(count_row,0,"comment_id");
 worksheet.write_string(count_row,1,"number of recommend");
 worksheet.write_string(count_row,2,"number of reviews");
-worksheet.write_string(count_row,3,"ratio");
+worksheet.write_string(count_row,3,"date");
+worksheet.write_string(count_row,4,"ratio");
 count_row = count_row + 1;
 
 for count in range(0,int(number_of_file)):
@@ -54,7 +55,8 @@ for count in range(0,int(number_of_file)):
 		worksheet.write_number(count_row,0,int(record_json[count_record]["comment_id"]));
 		worksheet.write_number(count_row,1,int(record_json[count_record]["num_of_recom"]));
 		worksheet.write_number(count_row,2,int(record_json[count_record]["num_of_view"]));
-		worksheet.write_number(count_row,3,float(record_json[count_record]["ratio"]));
+		worksheet.write_date(count_row,3,record_json[count_record]["date"]);
+		worksheet.write_number(count_row,4,float(record_json[count_record]["ratio"]));
 		count_row = count_row + 1;
 
 workbook.close();

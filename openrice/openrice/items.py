@@ -10,4 +10,5 @@ class OpenriceItem(Item):
 	num_of_recom = Field();
 	num_of_view = Field();
 	ratio = Field();
+	date = Field();
 	pass
