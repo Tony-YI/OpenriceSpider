@@ -30,15 +30,18 @@ class OpenriceSpider(Spider):
 		#try to retrieve the date information
 		try:
 			locate = response.body.index("date_lower");
+			#cut the data before the 'date_lower'
 			sub_str = response.body[locate:];
+			
 			locate = sub_str.index("display:none");
+			#cut the data before the "display:none"
 			sub_str_date = sub_str[locate:];
-			end = sub_str.index("</span>");
-			sub_str_date = sub_str[locate + len("display:none;\""):end];
+			#cut the data after the </span>
+			end = sub_str_date.index("</span>");
+			sub_str_date = sub_str_date[:end];
 			locate = sub_str_date.index("2");
 			sub_str_date = sub_str_date[locate:];
-			print "Date:" + sub_str_date;
-			date = sub_str;
+			date = sub_str_date;
 		except:
 			date = "";
 
